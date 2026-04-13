@@ -1,0 +1,10 @@
+﻿  main.cpp
+D:\Coding stuff\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
+D:\Coding stuff\Graphics\Graphics\Graphics\Snowman.h(18,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Snowman.h(23,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Snowman.h(27,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Utils.h(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(37,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(42,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(42,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Graphics.vcxproj -> D:\Coding stuff\Graphics\Graphics\x64\Debug\Graphics.exe
