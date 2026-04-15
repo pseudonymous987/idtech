@@ -68,5 +68,10 @@ private:
 };
 
 inline float distance(Node const* const a, Node const* const b) {
+	return distance(a->getPosition(), b->getPosition());
+}
 
+inline float distance(sf::Vector2f const& a, sf::Vector2f const& b) {
+	const sf::Vector2f delta = a - b;
+	return sqrtf(delta.x * delta.x + delta.y * delta.y);
 }

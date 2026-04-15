@@ -2,6 +2,7 @@
 #include <cfloat>
 #include <map>
 #include "Edge.h"
+#include <cmath>
 
 struct Graph : sf::Drawable {
 
@@ -29,7 +30,6 @@ struct Graph : sf::Drawable {
 
 	for (int i = 0; i < 10; i++) {
 		int value = rand() % 500;
-		std::cout << value << std::endl;
 	}*/
 
 	void createRandomGraph(int numNodes, int maxWidth, int maxHeight) {
@@ -43,13 +43,16 @@ struct Graph : sf::Drawable {
 			nodes.push_back(subject);
 		}
 
+		/*Edge* edge = new Edge(nodes[1], nodes[2]);
+		edges.push_back(edge);*/
 		for (int i = 0; i < numNodes; i++) {
 			if (numNodes <= 1) {
 				break;
 			}
+			
 			int temperature = randInt(numNodes - 1);
 			int humidity;
-			for (humidity = randInt(numNodes - 1); humidity != temperature; humidity = randInt(numNodes - 1));
+			for (humidity = randInt(numNodes - 1); humidity == temperature; humidity = randInt(numNodes - 1));
 
 			Node* local = nodes[temperature];
 			Node* remote = nodes[humidity];
@@ -57,8 +60,6 @@ struct Graph : sf::Drawable {
 			Edge* subject = new Edge(local, remote);
 			edges.push_back(subject);
 		}
-
-		//std::cout << edges.size() << std::endl;
 	}
 
 	void clear() {
@@ -77,7 +78,6 @@ struct Graph : sf::Drawable {
 			target.draw(*node, states);
 		}
 		for (auto const* edge : edges) {
-			std::cout << edge->getLocal()->getKey() + " " + edge->getRemote()->getKey() << std::endl;
 			target.draw(*edge, states);
 		}
 	}
@@ -93,4 +93,21 @@ struct Graph : sf::Drawable {
 private:
 	std::vector<Node*> nodes;
 	std::vector<Edge*> edges;
+
+	const float ATTRACTION_FORCE = 200.0f;
+	const float REPULSION_FORCE = 200.0f;
+	const float	REPULSION_DISTANCE = 100.0f;
+
+
+	sf::Vector2f compute_repulsive_force(Node const* const node, Node const* const repulsive_node) const {
+		const float DIST = distance(node, repulsive_node);
+
+		if (DIST > REPULSION_DISTANCE || DIST <= FLT_EPSILON) {
+			return { 0.f, 0.f };
+		}
+
+		const sf::Vector2f FORCE_DIRECTION = (node->getPosition() - repulsive_node->getPosition()) / DIST;
+		const float distance_force = (REPULSION_DISTANCE - DIST) / REPULSION_DISTANCE;
+		return REPULSION_FORCE * distance_force *  Time::GetDelta() * FORCE_DIRECTION;
+	}
 };

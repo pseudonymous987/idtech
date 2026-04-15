@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{8DB8D4D2-A2E8-42F6-A646-3356E9B90782}|Graphics\\Graphics.vcxproj|solutionrelative:Graphics\\Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8DB8D4D2-A2E8-42F6-A646-3356E9B90782}|Graphics\\Graphics.vcxproj|D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8DB8D4D2-A2E8-42F6-A646-3356E9B90782}|Graphics\\Graphics.vcxproj|solutionrelative:Graphics\\Utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8DB8D4D2-A2E8-42F6-A646-3356E9B90782}|Graphics\\Graphics.vcxproj|D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8DB8D4D2-A2E8-42F6-A646-3356E9B90782}|Graphics\\Graphics.vcxproj|solutionrelative:Graphics\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -30,13 +34,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\main.cpp",
               "RelativeDocumentMoniker": "Graphics\\main.cpp",
               "ToolTip": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\main.cpp",
               "RelativeToolTip": "Graphics\\main.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACUAAAABAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-18T00:54:10.737Z",
               "IsPinned": true,
@@ -52,26 +56,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Edge.h",
               "DocumentMoniker": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Edge.h",
               "RelativeDocumentMoniker": "Graphics\\Edge.h",
               "ToolTip": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Edge.h",
               "RelativeToolTip": "Graphics\\Edge.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-02-04T01:46:11.012Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Node.h",
               "DocumentMoniker": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Node.h",
               "RelativeDocumentMoniker": "Graphics\\Node.h",
               "ToolTip": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Node.h",
               "RelativeToolTip": "Graphics\\Node.h",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAswBgAAAAbAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAEYAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-02-04T01:47:29.283Z",
               "EditorCaption": ""
@@ -84,9 +88,22 @@
               "RelativeDocumentMoniker": "Graphics\\Graph.h",
               "ToolTip": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Graph.h",
               "RelativeToolTip": "Graphics\\Graph.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAYAAAA",
+              "ViewState": "AQIAADUAAAAAAAAAAAAAAG4AAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-02-12T02:14:28.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Utils.h",
+              "DocumentMoniker": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Utils.h",
+              "RelativeDocumentMoniker": "Graphics\\Utils.h",
+              "ToolTip": "D:\\Coding stuff\\Graphics\\Graphics\\Graphics\\Utils.h",
+              "RelativeToolTip": "Graphics\\Utils.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-15T00:18:09.743Z",
               "EditorCaption": ""
             }
           ]

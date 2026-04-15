@@ -24,7 +24,6 @@ private:
 	sf::Color color;
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override {
-		//std::cout << color.toInteger() << std::endl;
 
 		sf::Vertex const line[2]{
 			sf::Vertex{local->getPosition(), sf::Color::White},
