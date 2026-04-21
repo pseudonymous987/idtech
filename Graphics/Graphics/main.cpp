@@ -4,6 +4,7 @@
 #include "string"
 #include "stdlib.h"
 #include "Graph.h"
+#include "Utils.h"
 
 int main() {
     //Maine
@@ -29,6 +30,9 @@ int main() {
                 window.close();
             }
         }
+
+        Time::Update();
+        g.update();
 
         window.clear();
         window.draw(g);

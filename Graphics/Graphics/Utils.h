@@ -1,7 +1,10 @@
 #pragma once
 #include <cmath>
-#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 #include <random>
+#include <chrono>
+
+using namespace std::chrono_literals;
 
 static float eucDistF(sf::Vector2f const& a, sf::Vector2f const& b) {
 	sf::Vector2f const delta = a - b;
@@ -20,12 +23,15 @@ static int randInt(int max) {
 
 struct Time {
 	static float GetDelta() {
-		return _clock.getElapsedTime().asSeconds();
+		return (std::chrono::steady_clock::now() - start).count();
 	}
 	static void Update() {
-		_clock.restart();
+		start = std::chrono::steady_clock::now();
 	}
 
 private:
-	static sf::Clock _clock;
+
+	static std::chrono::time_point<std::chrono::steady_clock, std::chrono::steady_clock::duration> start;
+	//static std::chrono::time_point<std::chrono::steady_clock, std::chrono::steady_clock::duration> end;
+//	static sf::Clock _clock;
 };

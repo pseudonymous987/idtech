@@ -3,6 +3,7 @@
 #include <map>
 #include "Edge.h"
 #include <cmath>
+#include "Utils.h"
 
 struct Graph : sf::Drawable {
 
@@ -82,6 +83,29 @@ struct Graph : sf::Drawable {
 		}
 	}
 
+	void update() const {
+		std::map <Node*, std::vector<sf::Vector2f>> node_forces;
+		for (Node* node : nodes) node_forces[node] = {};
+
+		for (Node* node1 : nodes) {
+			for (Node* node2 : nodes) {
+				if (node1 != node2) {
+					node_forces[node1].push_back(compute_repulsive_force(node1, node2));
+				}
+			}
+		}
+
+		for (Edge* edge : edges) {
+			sf::Vector2f force = compute_attractive_force(edge);
+			node_forces[edge->getLocal()].push_back(-force);
+			node_forces[edge->getRemote()].push_back(force);
+		}
+
+		for (auto& node_and_forces : node_forces) {
+			node_and_forces.first->applyForces(node_and_forces.second);
+		}
+	}
+
 	explicit Graph() {
 		
 	}
@@ -109,5 +133,16 @@ private:
 		const sf::Vector2f FORCE_DIRECTION = (node->getPosition() - repulsive_node->getPosition()) / DIST;
 		const float distance_force = (REPULSION_DISTANCE - DIST) / REPULSION_DISTANCE;
 		return REPULSION_FORCE * distance_force *  Time::GetDelta() * FORCE_DIRECTION;
+	}
+
+	sf::Vector2f compute_attractive_force(Edge const* const edge) const {
+		const float DIST = distance(edge->getLocal(), edge->getRemote());
+
+		if (DIST <= FLT_EPSILON) {
+			return { 0.f, 0.f };
+		}
+
+		const sf::Vector2f FORCE_DIRECTION = (edge->getLocal()->getPosition() - edge->getRemote()->getPosition()) / DIST;
+		return ATTRACTION_FORCE * 0.5F * Time::GetDelta() * FORCE_DIRECTION;
 	}
 };

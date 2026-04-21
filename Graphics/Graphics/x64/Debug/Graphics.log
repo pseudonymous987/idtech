@@ -3,7 +3,13 @@ D:\Coding stuff\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C42
 D:\Coding stuff\Graphics\Graphics\Graphics\Snowman.h(18,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 D:\Coding stuff\Graphics\Graphics\Graphics\Snowman.h(23,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 D:\Coding stuff\Graphics\Graphics\Graphics\Snowman.h(27,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Coding stuff\Graphics\Graphics\Graphics\Node.h(71,9): error C2664: 'float distance(const Node *const ,const Node *const )': cannot convert argument 1 from 'sf::Vector2<float>' to 'const Node *const '
-D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(37,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(42,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(42,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Utils.h(26,58): warning C4244: 'return': conversion from '_Rep' to 'float', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Utils.h(26,58): warning C4244:         with
+D:\Coding stuff\Graphics\Graphics\Graphics\Utils.h(26,58): warning C4244:         [
+D:\Coding stuff\Graphics\Graphics\Graphics\Utils.h(26,58): warning C4244:             _Rep=__int64
+D:\Coding stuff\Graphics\Graphics\Graphics\Utils.h(26,58): warning C4244:         ]
+D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(38,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(43,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Coding stuff\Graphics\Graphics\Graphics\Graph.h(43,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+main.obj : error LNK2001: unresolved external symbol "private: static class std::chrono::time_point<struct std::chrono::steady_clock,class std::chrono::duration<__int64,struct std::ratio<1,1000000000> > > Time::start" (?start@Time@@0V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@A)
+D:\Coding stuff\Graphics\Graphics\x64\Debug\Graphics.exe : fatal error LNK1120: 1 unresolved externals
