@@ -5,6 +5,12 @@
 #include "stdlib.h"
 #include "Graph.h"
 #include "Utils.h"
+#include "chrono"
+
+
+float get_delta_time(std::chrono::time_point<std::chrono::steady_clock, std::chrono::steady_clock::duration> start, std::chrono::time_point<std::chrono::steady_clock, std::chrono::steady_clock::duration> end) {
+    return std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+}
 
 int main() {
     //Maine
@@ -22,22 +28,32 @@ int main() {
     Graph g;
     g.createRandomGraph(25, 1920, 1080);
 
-    while (window.isOpen())
-    {
+    auto start = std::chrono::steady_clock::now();
+    auto last_frame = start;
+    auto now = start;
+
+    while (window.isOpen()) {
         while (const std::optional event = window.pollEvent())
         {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
             }
         }
+        now = std::chrono::steady_clock::now();
 
-        Time::Update();
-        g.update();
+        float delta_time = get_delta_time(last_frame, now);
+
+        if (get_delta_time(start, now) <= 5000) {
+            g.update(delta_time / 250);
+        }
+
+        //std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start).count() << std::endl;
+
 
         window.clear();
         window.draw(g);
         window.display();
+
+        last_frame = now;
     }
 }
-
-//next time, use the brute force method for installing libraries and spare yourself a lot of time and nightmares. (not in the forseeable future!!!)
