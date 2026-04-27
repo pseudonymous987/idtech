@@ -72,6 +72,11 @@ inline float distance(sf::Vector2f const& a, sf::Vector2f const& b) {
 	return sqrtf(delta.x * delta.x + delta.y * delta.y);
 }
 
+inline float distance(Node const* const node, sf::Vector2f const& b) {
+	const sf::Vector2f delta = node->getPosition() - b;
+	return sqrtf(delta.x * delta.x + delta.y * delta.y);
+}
+
 inline float distance(Node const* const a, Node const* const b) {
 	return distance(a->getPosition(), b->getPosition());
 }

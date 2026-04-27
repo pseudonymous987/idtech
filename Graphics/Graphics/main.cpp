@@ -22,11 +22,13 @@ int main() {
 
     sf::ContextSettings settings;
     settings.antiAliasingLevel = 8;
+    const int WIDTH = 1920;
+    const int HEIGHT = 1080;
 
-	sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "SFML Window", sf::Style::Default, sf::State::Windowed, settings);
+	sf::RenderWindow window(sf::VideoMode({ WIDTH, HEIGHT }), "SFML Window", sf::Style::Default, sf::State::Windowed, settings);
 
-    Graph g;
-    g.createRandomGraph(25, 1920, 1080);
+    Graph g(WIDTH, HEIGHT);
+    g.createRandomGraph(25, WIDTH, HEIGHT);
 
     auto start = std::chrono::steady_clock::now();
     auto last_frame = start;
@@ -43,8 +45,8 @@ int main() {
 
         float delta_time = get_delta_time(last_frame, now);
 
-        if (get_delta_time(start, now) <= 5000) {
-            g.update(delta_time / 250);
+        if (get_delta_time(start, now) <= 15000) {
+            g.update(delta_time / 10);
         }
 
         //std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start).count() << std::endl;
