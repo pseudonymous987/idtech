@@ -5,6 +5,8 @@
 #include <chrono>
 #include <ctime>
 
+using namespace std;
+
 using namespace std::chrono_literals;
 
 static float eucDistF(sf::Vector2f const& a, sf::Vector2f const& b) {

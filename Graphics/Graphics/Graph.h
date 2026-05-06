@@ -5,6 +5,8 @@
 #include <cmath>
 #include "Utils.h"
 
+using namespace std;
+
 struct Graph : sf::Drawable {
 
 	/*void addNodes(std::vector<Node*> const& oneLetterInGeneral) {
@@ -64,7 +66,7 @@ struct Graph : sf::Drawable {
 			Node* remote = nodes[humidity];
 
 			Edge* subject = new Edge(local, remote);
-			edges.push_back(subject);
+			addEdge(subject);
 		}
 	}
 
@@ -113,9 +115,12 @@ struct Graph : sf::Drawable {
 	}
 
 	void print() {
-		for (Node* i : nodes) {
-			std::cout << "Node " << i << ":" << std::endl;
-			//node.
+		for (auto const& [key, value] : adjList) {
+			std::cout << "Node " << key->getKey() << " points to: ";
+			for (Node* e : value) {
+				std::cout << e->getKey() << ", ";
+			}
+			std::cout << std::endl;
 		}
 	}
 

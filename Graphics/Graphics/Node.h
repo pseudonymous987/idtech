@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include "Utils.h"
 
+using namespace std;
+
 struct Node final : public sf::Drawable {
 explicit Node(int key, float x = 50, float y = 50, float radius = 12, sf::Color color = sf::Color::White) {
 	this->key = key;

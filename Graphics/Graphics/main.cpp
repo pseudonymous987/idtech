@@ -7,6 +7,7 @@
 #include "Utils.h"
 #include "chrono"
 
+using namespace std;
 
 float get_delta_time(std::chrono::time_point<std::chrono::steady_clock, std::chrono::steady_clock::duration> start, std::chrono::time_point<std::chrono::steady_clock, std::chrono::steady_clock::duration> end) {
     return std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
@@ -28,7 +29,9 @@ int main() {
 	sf::RenderWindow window(sf::VideoMode({ WIDTH, HEIGHT }), "SFML Window", sf::Style::Default, sf::State::Windowed, settings);
 
     Graph g(WIDTH, HEIGHT);
-    g.createRandomGraph(25, WIDTH, HEIGHT);
+    g.createRandomGraph(15, WIDTH, HEIGHT);
+
+    g.print();
 
     auto start = std::chrono::steady_clock::now();
     auto last_frame = start;

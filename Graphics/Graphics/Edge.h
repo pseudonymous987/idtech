@@ -3,6 +3,7 @@
 #include "Node.h"
 #include "stdio.h"
 
+using namespace std;
 
 struct Edge final : public sf::Drawable {
 	explicit Edge(Node* local, Node* remote, sf::Color color = sf::Color::Green) {
