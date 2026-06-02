@@ -8,7 +8,7 @@
 using namespace std;
 
 struct Graph : sf::Drawable {
-
+	std::map<Node*, std::list<Node*>> adjList;
 	/*void addNodes(std::vector<Node*> const& oneLetterInGeneral) {
 		for (int i = 0; i < oneLetterInGeneral.size(); i++) {
 			nodes.push_back(oneLetterInGeneral[i]);
@@ -137,7 +137,6 @@ private:
 	std::vector<Node*> nodes;
 	std::vector<Edge*> edges;
 
-	std::map<Node*, std::list<Node*>> adjList;
 	int width;
 	int height;
 	const float ATTRACTION_FORCE = 150.0f;

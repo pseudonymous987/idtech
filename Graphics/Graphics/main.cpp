@@ -6,6 +6,7 @@
 #include "Graph.h"
 #include "Utils.h"
 #include "chrono"
+#include "dfs.h"
 
 using namespace std;
 
@@ -32,6 +33,9 @@ int main() {
     g.createRandomGraph(15, WIDTH, HEIGHT);
 
     g.print();
+
+    DFS dfs(g.adjList);
+    dfs.traverse(g.adjList.begin()->first);
 
     auto start = std::chrono::steady_clock::now();
     auto last_frame = start;

@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Node.h"
-#include "stdio.h"
 
 using namespace std;
 
