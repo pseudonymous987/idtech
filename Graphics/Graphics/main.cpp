@@ -41,28 +41,53 @@ int main() {
     auto last_frame = start;
     auto now = start;
 
-    while (window.isOpen()) {
-        while (const std::optional event = window.pollEvent())
-        {
+    int step_speed = 1;
+    auto searching_start = now;
+
+    enum States {
+        BALANCING,
+        STABLE,
+        SEARCHING
+    };
+
+    States state = BALANCING;
+
+    while (window.isOpen()) { 
+        while (const std::optional event = window.pollEvent()) { // sfml key and event handling
             if (event->is<sf::Event::Closed>()) {
                 window.close();
             }
         }
-        now = std::chrono::steady_clock::now();
 
+        //current time and time from last frame
+        now = std::chrono::steady_clock::now();
         float delta_time = get_delta_time(last_frame, now);
 
-        if (get_delta_time(start, now) <= 15000) {
-            g.update(delta_time / 10);
+        //state machine
+        switch (state) {
+        case BALANCING : 
+            if (get_delta_time(start, now) <= 15000) { //ammount of time graph spends balancing, in ms
+                g.update(delta_time * 0.1); //rate of updates per frame
+            } else {
+                state = STABLE;
+            }
+        case STABLE :
+            searching_start = now;
+            state = SEARCHING;
+        case SEARCHING :
+
+            if () {
+
+            }
+            
         }
 
-        //std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start).count() << std::endl;
-
-
+       
+        //updates drawable objects
         window.clear();
         window.draw(g);
         window.display();
 
-        last_frame = now;
+        last_frame = now;//updates last frame before frame iteration
     }
 }

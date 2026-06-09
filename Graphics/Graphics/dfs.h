@@ -8,8 +8,9 @@
 
 class DFS {
 public:
-	DFS(std::map<Node*, std::list<Node*>> adjList) {
+	DFS(std::map<Node*, std::list<Node*>>& adjList) {
 		this->adjList = adjList;
+		std::cout << "Current size: " << this->adjList.size() << std::endl;
 	}
 
 	vector<Node*> traverse(Node* root) {
@@ -34,7 +35,7 @@ private:
 	int delay;
 	std::map<Node*, std::list<Node*>> adjList;
 
-	void traverseRec(std::vector<Node*>& visited, std::vector<Node*> res, Node* root) {
+	void traverseRec(std::vector<Node*>& visited, std::vector<Node*>& res, Node* root) {
 		bool visit = (std::find(visited.begin(), visited.end(), root) != visited.end());
 		if (!visit) {
 			visited.push_back(root);
