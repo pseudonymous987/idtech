@@ -7,6 +7,7 @@
 #include "Utils.h"
 #include "chrono"
 #include "dfs.h"
+#include "bfs.h"
 
 using namespace std;
 
@@ -34,8 +35,15 @@ int main() {
 
     g.print();
 
+    cout << endl << "--- DFS ---" << endl;
     DFS dfs(g.adjList);
-    dfs.traverse(g.adjList.begin()->first);
+    vector<Node*> dfs_result = dfs.traverse(g.adjList.begin()->first);
+
+    cout << endl << "--- BFS ---" << endl;
+    BFS bfs(g.adjList);
+
+    /*using Duration = std::chrono::duration<double>;
+    Duration cooldown_timer = */
 
     auto start = std::chrono::steady_clock::now();
     auto last_frame = start;
@@ -71,15 +79,24 @@ int main() {
             } else {
                 state = STABLE;
             }
+            break;
+
         case STABLE :
             searching_start = now;
             state = SEARCHING;
+            break;
+
         case SEARCHING :
 
-            if () {
-
+            if (dfs_result.size() > 0) {
+                if (get_delta_time(searching_start, now) <= 1000) {
+                    Node* temp = dfs_result.front();
+                    dfs_result.erase(dfs_result.begin());
+                    temp->setColor(sf::Color::Blue);
+                    searching_start = now;
+                }
             }
-            
+            break;
         }
 
        

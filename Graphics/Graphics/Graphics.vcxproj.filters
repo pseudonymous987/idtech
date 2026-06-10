@@ -44,5 +44,8 @@
     <ClInclude Include="dfs.h">
       <Filter>Source Files\Graphics\Graphing_Algorithms</Filter>
     </ClInclude>
+    <ClInclude Include="bfs.h">
+      <Filter>Source Files\Graphics\Graphing_Algorithms</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
